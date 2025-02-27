@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Razia!</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5em;
+        }
+        p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.2em;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #888;
+        }
+        .button {
+            background: #d63384;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .button:hover {
+            background: #b52b6a;
+        }
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="button" onclick="showMessage()">Open to View Surprise</button>
+    <div class="container" id="messageContainer">
+        <h1>Happy Birthday, Razia! 🎉</h1>
+        <p>Hey Razia,</p>
+        <p>Happy Birthday to a soul whose beauty fills every moment and whose light touches the hearts of everyone lucky enough to know her.
+          On this blessed day, I find myself reflecting on how incredibly fortunate I am to have crossed paths with you.
+          From the moment our paths crossed, your presence has been a light in my life in ways I never imagined. Your kindness, wisdom, grace, and the warmth you share with those around you are just a few of the countless things that make you special,
+          and I thank Allah (SWT) every day for bringing you into my life, even from a distance.
+</p><p>There’s an aura about you that is difficult to put into words a quiet strength, a peaceful beauty, a gentle shine that only you possess.
+  Whether it's the way you speak with such elegance, or the way you make even the simplest moments feel significant,
+  there’s something deeply special about you. Your spirit is a gift that makes everything you touch feel just a little brighter,
+  a little more meaningful. I find myself in awe of who you are, and I cannot help but be drawn to the rare qualities that you carry within you,
+  qualities that not only make you stand out but make you unforgettable.
+</p><p>As you celebrate this new year of life, I pray that Allah (SWT) blesses you with all the joy, love, and fulfillment your heart desires.
+  May He shower you with His mercy and guide you towards the very best of this world and the Hereafter, In shaa Allah.
+  You are deserving of every happiness, every blessing, and every good thing that life has to offer today and always.</p>
+<p>Though words may fall short in expressing how much you mean to me, I’ll say this, "you’ve left a mark on my heart that I know will never fade.
+  There are times when my thoughts drift to you, and I find myself wondering if you know how much I truly admire you.
+  There’s something about you that I can’t quite explain, but it has captured my heart in a way I never expected.
+  You’ve become more than just a friend to me. You’ve become someone whose presence in my life feels like a quiet, cherished blessing, even in moments when we are apart."
+</p><p>I pray that Allah (SWT) continues to guide you, protect you, and grant you peace in every step you take.
+  You are not just someone I hold, but someone I pray for in my heart, always.
+</p><p>So, on your special day, I send to you all the love, blessings, and happiness that your heart can hold.
+  May this year bring you everything your soul desires, and may you continue to shine, not only in the lives of others but in your own journey towards success and peace.
+</p><p>Always remember, no matter the distance between us, there’s someone here who holds you close in their thoughts and prayers, someone who admires you deeply and cares for you more than words can say.
+</p>
+      <p class="footer">Wishing you all the best this Ramadan. Stay blessed and safe! 💖</p>
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById("messageContainer").style.display = "block";
+            launchConfetti();
+        }
+        function launchConfetti() {
+            let confettiContainer = document.createElement("div");
+            confettiContainer.classList.add("confetti");
+            document.body.appendChild(confettiContainer);
+
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement("div");
+                confetti.style.position = "absolute";
+                confetti.style.width = "10px";
+                confetti.style.height = "10px";
+                confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.top = `${Math.random() * 100}%`;
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.opacity = Math.random();
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.animation = "fall 3s linear infinite";
+                confettiContainer.appendChild(confetti);
+            }
+        }
+    </script>
+</body>
+</html>
